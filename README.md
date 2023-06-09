@@ -45,7 +45,6 @@ touch .eslintrc
     "no-unused-vars": "warn",
     "no-console": "off",
     "func-names": "off",
-    "no-process-exit": "off",
     "object-shorthand": "off",
     "max-classes-per-file": ["error", 10],
     "import/prefer-default-export": "off",
@@ -53,10 +52,22 @@ touch .eslintrc
     "no-var": "error",
     "for-direction": "error",
     "no-shadow": "error",
-    "import/no-extraneous-dependencies": "off"
   }
 }
 ```
+
+- `"extends" - Указание конфигурации`
+- `"globals" - Это свойство конфигурации ESLint, которое используется для определения глобальных переменных, которые могут быть использованы в вашем коде`
+- `"no-unused-var" - Это правило отвечает за обнаружение и предупреждение о неиспользуемых переменных в вашем коде`
+- `"no-console" - Это правило отвечает за обнаружение и предупреждение о неиспользуемых переменных в вашем коде`
+- `"func-names" - Это правило определяет, должны ли функции иметь имена или могут быть анонимными.`
+- `"object-shorthand" - Это правило предлагает использовать краткий синтаксис объектных литералов, такой как { foo } вместо { foo: foo }`
+- `"max-classes-per-file" - Это правило определяет максимальное количество классов, которые можно объявить в одном файле`
+- `"import/prefer-default-export" - Это правило предпочитает использование экспорта по умолчанию (export default) в модуле`
+- `"prefer-const" - Это правило рекомендует использовать ключевое слово const вместо let или var, если значение переменной не изменяется.`
+- `"no-var" - Это правило запрещает использование ключевого слова var для объявления переменных и рекомендует использовать let или const вместо него.`
+- `"for-direction" - Это правило проверяет наличие ошибок в направлении цикла for`
+- `"no-shadow" - Это правило запрещает объявление переменных, которые скрывают переменные из более высокого уровня области видимости.`
 
 ## Настройка ESLINT для редактирования при сохранении
 
@@ -110,7 +121,6 @@ touch .prettierrc
     "no-unused-vars": "warn",
     "no-console": "off",
     "func-names": "off",
-    "no-process-exit": "off",
     "object-shorthand": "off",
     "max-classes-per-file": ["error", 10],
     "import/prefer-default-export": "off",
@@ -118,10 +128,11 @@ touch .prettierrc
     "no-var": "error",
     "for-direction": "error",
     "no-shadow": "error",
-    "import/no-extraneous-dependencies": "off"
   }
 }
 ```
+- `"plugins" - Эта настройка определяет список плагинов, используемых в вашей конфигурации.`
+- `"prettier/prettier" - Используется для проверки соответствия кода вашего проекта правилам форматирования плагина.`
 --------------------------------------
 # Создание **.gitignore**
 ### На Windows
