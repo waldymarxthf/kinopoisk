@@ -53,7 +53,7 @@ echo {}> .eslintrc
 
 ## Настройка ESLINT для редактирования при сохранении
 
-`Открываем settings.json и вставляем следующую команду`
+Открываем `settings.json` и вставляем следующую команду
 
 ```
 "editor.codeActionsOnSave": {
@@ -145,4 +145,4 @@ echo {}> .gitignore
 - `npm start - запускает parcel`
 - `npm build - создает билд parcel`
 - `npm lint - запускает eslint для всех файлов`
-- `npm lint - запускает prettier для всех файлов`
+- `npm format - запускает prettier для всех файлов`
