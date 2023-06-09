@@ -37,17 +37,13 @@ touch .eslintrc
 
 ```
 {
-  "extends": ["airbnb", "prettier", "plugin:prettier/recommended"],
-  "plugins": ["prettier"],
+  "extends": ["airbnb"],
   "globals": {
     "window": true,
     "document": true,
     "localStorage": true
   },
   "rules": {
-    "prettier/prettier": ["error",{
-      "endOfLine": "auto"}
-    ],
     "no-unused-vars": "warn",
     "no-console": "off",
     "func-names": "off",
@@ -105,7 +101,35 @@ touch .prettierrc
   "printWidth": 100
 }
 ```
---------------------------------------
+### Обновляем .eslintrc
+```
+{
+  "extends": ["airbnb", "prettier", "plugin:prettier/recommended"],
+  "plugins": ["prettier"],
+  "globals": {
+    "window": true,
+    "document": true,
+    "localStorage": true
+  },
+  "rules": {
+    "prettier/prettier": ["error",{
+      "endOfLine": "auto"}
+    ],
+    "no-unused-vars": "warn",
+    "no-console": "off",
+    "func-names": "off",
+    "no-process-exit": "off",
+    "object-shorthand": "off",
+    "max-classes-per-file": ["error", 10],
+    "import/prefer-default-export": "off",
+    "prefer-const": "warn",
+    "no-var": "error",
+    "for-direction": "error",
+    "no-shadow": "error",
+    "import/no-extraneous-dependencies": "off"
+  }
+}
+```
 # Создание **.gitignore**
 ### На Windows
 ```
