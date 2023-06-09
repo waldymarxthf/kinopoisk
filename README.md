@@ -142,7 +142,7 @@ echo {}> .gitignore
 
 ## Команды
 
-- `npm start - запускает parcel`
-- `npm build - создает билд parcel`
-- `npm lint - запускает eslint для всех файлов`
-- `npm format - запускает prettier для всех файлов`
+- `npm run start - запускает parcel`
+- `npm run build - создает билд parcel`
+- `npm run lint - запускает eslint для всех файлов`
+- `npm run format - запускает prettier для всех файлов`
