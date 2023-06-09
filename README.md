@@ -20,8 +20,6 @@ npx parcel index.html
 ```
 npm i -D eslint eslint-plugin-node eslint-config-node eslint-config-airbnb
 ```
-
-- - - - - - - - - - - - - - - - - - - 
 ## Создание файла .eslintrc
 
 ### На Windows
@@ -70,17 +68,11 @@ touch .eslintrc
 },
 "eslint.validate": ["javascript"],
 ```
-
 --------------------------------------
-
 # Установка **Prettier**
-
 ```
 npm i -D prettier eslint-plugin-prettier eslint-config-prettier
 ```
-
-- - - - - - - - - - - - - - - - - - - 
-
 ## Создание файла .prettierrc
 ### На Windows
 ```
@@ -130,6 +122,7 @@ touch .prettierrc
   }
 }
 ```
+--------------------------------------
 # Создание **.gitignore**
 ### На Windows
 ```
