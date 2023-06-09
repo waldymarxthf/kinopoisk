@@ -127,9 +127,10 @@ echo {}> .gitignore
 
 # Настройка **package.json**
 
-- В ключе `scripts` меняем на данное значение
+- В файле `package.json` меняем эти значения
 
 ```
+"source": "src/index.html",
 "scripts": {
   "test": "echo \"Error: no test specified\" && exit 1",
   "start": "parcel",
