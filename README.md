@@ -1,53 +1,66 @@
 # **Начало работы**
 
 - `создаем папку в директории basics-4 с вашим ником`
-- `cd "название папки"`
+- `cd "название папки которую создали"`
 - `npm init`
 
 --------------------------------------
 
 # Установка Parcel
-
-- `npm install parcel --save-dev`
-- `npx parcel index.html`
-
+```
+npm install parcel --save-dev
+```
+### Запуск Parcel
+```
+npx parcel index.html
+```
 --------------------------------------
-
 # Установка Eslint
 
 ```
-npm i -D eslint eslint-plugin-node eslint-config-node
-```
-```
-npx install-peerdeps --dev eslint-config-airbnb
+npm i -D eslint eslint-plugin-node eslint-config-node eslint-config-airbnb
 ```
 
 - - - - - - - - - - - - - - - - - - - 
 ## Создание файла .eslintrc
+
+### На Windows
 ```
-echo {}> .eslintrc
+echo > .eslintrc
+```
+### На MacOS и Linux
+```
+touch .eslintrc
 ```
 
 ## Настройка .eslintrc
 
 ```
 {
-  "extends": ["airbnb", "prettier", "plugin:prettier/recommended"],
-  "plugins": ["prettier"],
-  "globals": {
-    "window": true,
-    "document": true,
-    "localStorage": true
-  },
-  "rules": {
-    "prettier/prettier": "error",
-    "no-unused-vars": "warn",
-    "no-console": "off",
-    "func-names": "off",
-    "no-process-exit": "off",
-    "object-shorthand": "off",
-    "class-methods-use-this": "off"
-  }
+	"extends": ["airbnb", "prettier", "plugin:prettier/recommended"],
+	"plugins": ["prettier"],
+	"globals": {
+		"window": true,
+		"document": true,
+		"localStorage": true
+	},
+	"rules": {
+		"prettier/prettier": ["error",{
+      "endOfLine": "auto"}
+    ],
+		"no-unused-vars": "warn",
+		"no-console": "off",
+		"func-names": "off",
+		"no-process-exit": "off",
+		"object-shorthand": "off",
+		"max-classes-per-file": ["error", 10],
+		"import/prefer-default-export": "off",
+		"prefer-const": "warn",
+		"no-var": "error",
+		"for-direction": "error",
+		"no-shadow": "error",
+		"import/no-extraneous-dependencies": "off"
+	}
 }
 ```
 
@@ -73,11 +86,16 @@ npm i -D prettier eslint-plugin-prettier eslint-config-prettier
 - - - - - - - - - - - - - - - - - - - 
 
 ## Создание файла .prettierrc
+### На Windows
 ```
-echo {}> .prettierrc
+echo > .prettierrc
+```
+### На MacOS и Linux
+```
+touch .prettierrc
 ```
 
-### настройка .prettierrc
+### Настройка .prettierrc
 ```
 {
   "tabWidth": 2,
@@ -89,11 +107,17 @@ echo {}> .prettierrc
 ```
 --------------------------------------
 # Создание **.gitignore**
+### На Windows
 ```
-echo {}> .gitignore
+echo > .gitignore
+```
+### На MacOS и Linux
+```
+touch .gitignore
 ```
 
-## настройка .gitignore
+
+## Настройка .gitignore
 
 ```
 *.key
