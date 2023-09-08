@@ -15,6 +15,7 @@ export const filterSlice = createSlice({
   reducers: {
     selectSort: (state, action) => {
       state.sort = action.payload;
+      state.page = 1;
     },
     selectPage: (state, action) => {
       state.page = action.payload;
