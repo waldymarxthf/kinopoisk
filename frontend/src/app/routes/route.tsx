@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
         element: <Main />,
       },
       {
-        path: "film/:filmId",
+        path: "/film/:filmId",
         element: <FilmDetails />,
         loader: async ({ params }) => {
           const film = await getFilmById(params.filmId);
@@ -24,11 +24,11 @@ export const router = createBrowserRouter([
         },
       },
       {
-        path: "login",
+        path: "/login",
         element: <Login />,
       },
       {
-        path: "registration",
+        path: "/registration",
         element: <Registration />,
       },
     ],
