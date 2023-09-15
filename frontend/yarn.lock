@@ -312,7 +312,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.22.5"
 
-"@babel/runtime@^7.10.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.13.10", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.10.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.13.10", "@babel/runtime@^7.16.7", "@babel/runtime@^7.9.2":
   version "7.22.15"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.22.15.tgz#38f46494ccf6cf020bd4eed7124b425e83e523b8"
   integrity sha512-T0O+aa+4w0u06iNmapipJXMV4HoUir03hpx3/YqXXhu9xim3w+dVphjFWl1OH8NbZHw5Lbm9k45drDkgq2VNNA==
@@ -662,6 +662,11 @@
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/@floating-ui/utils/-/utils-0.1.3.tgz#6ee493102b45d796d69f1f472d4bf64e5244500a"
   integrity sha512-uvnFKtPgzLnpzzTRfhDlvXX0kLYi9lDRQbcDmT8iXl71Rx+uwSuaUIQl3DNC7w5OweAQ7XQMDObML+KaYDQfng==
+
+"@gisatcz/cross-package-react-context@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@gisatcz/cross-package-react-context/-/cross-package-react-context-0.2.0.tgz#e8626ed8693e053b858353e2253143201fabc30c"
+  integrity sha512-E7aR/o1ArpXETO8bQi+Hltj3duHeZiLjR+x1VZrCDs3jplSLGoy+oqCcqNNE1BamTBa0YQTs8Go1Q1dtt3LEUg==
 
 "@humanwhocodes/config-array@^0.11.10":
   version "0.11.10"
@@ -1101,11 +1106,6 @@
     redux-thunk "^2.4.2"
     reselect "^4.1.8"
 
-"@remix-run/router@1.8.0":
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.8.0.tgz#e848d2f669f601544df15ce2a313955e4bf0bafc"
-  integrity sha512-mrfKqIHnSZRyIzBcanNJmVQELTnX+qagEDlcKO90RgRBVOZGSGvZKeDihTRfWcqoDn5N/NkUcwWTccnpN18Tfg==
-
 "@sinclair/typebox@^0.27.8":
   version "0.27.8"
   resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.27.8.tgz#6667fac16c436b5434a387a34dedb013198f6e6e"
@@ -1137,6 +1137,42 @@
   version "2.30.0"
   resolved "https://registry.yarnpkg.com/@tabler/icons/-/icons-2.30.0.tgz#4ea3c4da56fd5653bb9d0be0dc7feaa33602555c"
   integrity sha512-tvtmkI4ALjKThVVORh++sB9JnkFY7eGInKxNy+Df7WVQiF7T85tlvGADzlgX4Ic+CK5MIUzZ0jhOlQ/RRlgXpg==
+
+"@tanstack/react-router@^0.0.1-beta.190":
+  version "0.0.1-beta.190"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-router/-/react-router-0.0.1-beta.190.tgz#8b4ac39c373beb1b22c4b62512e6e79664bb2fc6"
+  integrity sha512-Wj4vCQ4Ny2TH7ktRX1mojSfMn0UaMXiL9hxVgozO+y5zdOZMpKmb29pG09EAgqI5r7n3h3SMeplRr0uTzl3vwQ==
+  dependencies:
+    "@babel/runtime" "^7.16.7"
+    "@gisatcz/cross-package-react-context" "^0.2.0"
+    "@tanstack/react-store" "^0.0.1"
+    "@tanstack/router-core" "0.0.1-beta.190"
+    tiny-invariant "^1.3.1"
+    tiny-warning "^1.0.3"
+
+"@tanstack/react-store@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-store/-/react-store-0.0.1.tgz#8b642309047c38584893ccac64f9c1e52f191a48"
+  integrity sha512-UMAHrm1FjehpfnSCi5Uel7fdoYM8fk2ovyHmoTBv4SPS66hLLEEVPQhALrIkJ0OSi1h+p96HapCFNqlavZADIA==
+  dependencies:
+    "@tanstack/store" "0.0.1"
+    use-sync-external-store "^1.2.0"
+
+"@tanstack/router-core@0.0.1-beta.190":
+  version "0.0.1-beta.190"
+  resolved "https://registry.yarnpkg.com/@tanstack/router-core/-/router-core-0.0.1-beta.190.tgz#3e5093536b57b6f81d21c52cd73c9ae60e240f31"
+  integrity sha512-Gx4zDGB6EVwJsdOo7nEwU1BH4KjSuJfzRadAoR3iVK7k42UtLS+eQJlWiZxiqm+LHYqIHYxYQE8FBLph9f7alQ==
+  dependencies:
+    "@babel/runtime" "^7.16.7"
+    "@gisatcz/cross-package-react-context" "^0.2.0"
+    "@tanstack/store" "^0.0.1"
+    tiny-invariant "^1.3.1"
+    tiny-warning "^1.0.3"
+
+"@tanstack/store@0.0.1", "@tanstack/store@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@tanstack/store/-/store-0.0.1.tgz#319c687921fee8896b92c4e512344eae4aa3f272"
+  integrity sha512-Hq5mwC9oPD1HVRIsgxASYtJQAv5x7k42SMXBq2b/fMYrtMf7WMkOArOMs/ExoNED214Ql94Ft4zVWr0u2D6a6w==
 
 "@tsconfig/node10@^1.0.7":
   version "1.0.9"
@@ -3441,21 +3477,6 @@ react-remove-scroll@^2.5.5:
     use-callback-ref "^1.3.0"
     use-sidecar "^1.1.2"
 
-react-router-dom@^6.15.0:
-  version "6.15.0"
-  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.15.0.tgz#6da7db61e56797266fbbef0d5e324d6ac443ee40"
-  integrity sha512-aR42t0fs7brintwBGAv2+mGlCtgtFQeOzK0BM1/OiqEzRejOZtpMZepvgkscpMUnKb8YO84G7s3LsHnnDNonbQ==
-  dependencies:
-    "@remix-run/router" "1.8.0"
-    react-router "6.15.0"
-
-react-router@6.15.0:
-  version "6.15.0"
-  resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.15.0.tgz#bf2cb5a4a7ed57f074d4ea88db0d95033f39cac8"
-  integrity sha512-NIytlzvzLwJkCQj2HLefmeakxxWHWAP+02EGqWEZy+DgfHHKQMUoBBjUQLOtFInBMhWtb3hiUy6MfFgwLjXhqg==
-  dependencies:
-    "@remix-run/router" "1.8.0"
-
 react-style-singleton@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/react-style-singleton/-/react-style-singleton-2.2.1.tgz#f99e420492b2d8f34d38308ff660b60d0b1205b4"
@@ -3767,6 +3788,16 @@ text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==
 
+tiny-invariant@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/tiny-invariant/-/tiny-invariant-1.3.1.tgz#8560808c916ef02ecfd55e66090df23a4b7aa642"
+  integrity sha512-AD5ih2NlSssTCwsMznbvwMZpJ1cbhkGd2uueNxzv2jDlEeZdU04JQfRnggJQ8DrcVBGjAsCKwFBbDlVNtEMlzw==
+
+tiny-warning@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/tiny-warning/-/tiny-warning-1.0.3.tgz#94a30db453df4c643d0fd566060d60a875d84754"
+  integrity sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==
+
 titleize@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/titleize/-/titleize-3.0.0.tgz#71c12eb7fdd2558aa8a44b0be83b8a76694acd53"
@@ -3916,7 +3947,7 @@ use-sidecar@^1.1.2:
     detect-node-es "^1.1.0"
     tslib "^2.0.0"
 
-use-sync-external-store@^1.0.0:
+use-sync-external-store@^1.0.0, use-sync-external-store@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
   integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==

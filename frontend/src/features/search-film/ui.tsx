@@ -10,7 +10,7 @@ import {
 } from "@mantine/core";
 import { useDebouncedValue } from "@mantine/hooks";
 import { forwardRef, useEffect, useState } from "react";
-import { useNavigate } from "react-router";
+// import { useNavigate } from "@tanstack/react-router";
 import { RootState, useAppDispatch } from "~app/store/store";
 import { fetchFilmsByQuery } from "./model/api";
 import { useSelector } from "react-redux";
@@ -19,7 +19,7 @@ import { IconSearch } from "@tabler/icons-react";
 export function SearchFilm() {
   const [value, setValue] = useState("");
   const [debouncedValue] = useDebouncedValue(value, 1000);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const filmsByQuery = useSelector((state: RootState) => state.filmsByQuery.filmsByQuery);
   const isLoading = useSelector((state: RootState) => state.filmsByQuery.isLoading);
   const dispatch = useAppDispatch();
@@ -43,7 +43,7 @@ export function SearchFilm() {
       filter={Boolean}
       disabled={isLoading}
       icon={<IconSearch size="0.9rem" />}
-      onItemSubmit={(item) => navigate(`film/${item.id}`)}
+      // onItemSubmit={(item) => navigate({ to: `film/${item.id}` })}
     />
   );
 }

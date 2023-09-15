@@ -13,9 +13,9 @@ import {
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { IconAt, IconLock } from "@tabler/icons-react";
-import { Navigate, useNavigate } from "react-router-dom";
 import LoginGoogleButton from "~features/login-w-google";
 import usePocketBase from "~shared/lib/hooks/pb-hook";
+import { Navigate, useNavigate } from "@tanstack/react-router";
 
 export function Login() {
   const { user, login } = usePocketBase();
@@ -30,7 +30,7 @@ export function Login() {
 
   const handleOnSubmit = async () => {
     await login(form.values.email, form.values.password);
-    navigate("/");
+    navigate({ to: "/" });
   };
 
   return (

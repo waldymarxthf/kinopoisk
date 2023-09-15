@@ -1,5 +1,5 @@
 import { AppShell } from "@mantine/core";
-import { Outlet } from "react-router";
+import { Outlet } from "@tanstack/react-router";
 import AppProvider from "./providers/provider";
 import HeaderFilms from "~widgets/header";
 
