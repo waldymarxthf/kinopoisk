@@ -1,3 +1,3 @@
-import { Registration } from "./ui";
+// import { Registration } from "./ui";
 
-export default Registration;
+// export default Registration;

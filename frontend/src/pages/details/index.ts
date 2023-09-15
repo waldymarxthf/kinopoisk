@@ -1,3 +1,3 @@
-import { FilmDetails } from "./ui";
+// import { FilmDetails } from "./ui";
 
-export default FilmDetails;
+// export default FilmDetails;
