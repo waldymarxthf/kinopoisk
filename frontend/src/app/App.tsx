@@ -1,14 +1,14 @@
 import { AppShell } from "@mantine/core";
-import { Outlet } from "@tanstack/react-router";
 import AppProvider from "./providers/provider";
 import HeaderFilms from "~widgets/header";
+import Main from "~pages/main";
 
 function App() {
   return (
     <AppProvider>
       <AppShell>
         <HeaderFilms />
-        <Outlet />
+        <Main />
       </AppShell>
     </AppProvider>
   );

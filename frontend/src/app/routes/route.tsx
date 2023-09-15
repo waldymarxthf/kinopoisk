@@ -10,6 +10,7 @@ import { RootRoute, Route, Router } from "@tanstack/react-router";
 import App from "~app/App";
 import Login from "~pages/login";
 import Main from "~pages/main";
+import Root from "./root";
 
 // export const router = createBrowserRouter([
 //   {
@@ -41,13 +42,13 @@ import Main from "~pages/main";
 // ]);
 
 const rootRoute = new RootRoute({
-  component: App,
+  component: Root,
 });
 
 const indexRoute = new Route({
   getParentRoute: () => rootRoute,
   path: "/",
-  component: Main,
+  component: App,
 });
 
 const aboutRoute = new Route({
