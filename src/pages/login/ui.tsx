@@ -13,12 +13,11 @@ import {
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { IconAt, IconLock } from "@tabler/icons-react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import LoginGoogleButton from "~features/login-w-google";
-import usePocketBase from "~shared/lib/hooks/pb-hook";
+import { supabase } from "~shared/lib/supabase";
 
 export function Login() {
-  const { user, login } = usePocketBase();
   const navigate = useNavigate();
 
   const form = useForm({
@@ -29,13 +28,16 @@ export function Login() {
   });
 
   const handleOnSubmit = async () => {
-    await login(form.values.email, form.values.password);
+    // await login(form.values.email, form.values.password);
+    await supabase.auth.signInWithPassword({
+      email: form.values.email,
+      password: form.values.password,
+    });
     navigate("/");
   };
 
   return (
     <>
-      {user && <Navigate to="/" replace={true} />}
       <Center maw={400} mx="auto">
         <Paper radius="md" p="md" w={350}>
           <form onSubmit={form.onSubmit(handleOnSubmit)}>

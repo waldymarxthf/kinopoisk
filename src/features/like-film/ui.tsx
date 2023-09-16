@@ -1,35 +1,23 @@
 import { ActionIcon } from "@mantine/core";
 import { IconHeart, IconHeartFilled } from "@tabler/icons-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "~app/store/store";
-import usePocketBase from "~shared/lib/hooks/pb-hook";
+import { supabase } from "~shared/lib/supabase";
 
 export function LikeFilm({ id }: { id: number }) {
-  const { pb, user } = usePocketBase();
   const [isLiked, setIsLiked] = useState(false);
-  const favoriteFilms = useSelector((state: RootState) => state.filmsData.favoriteFilms);
-
-  useEffect(() => {
-    const foundItem = favoriteFilms.find(
-      (item) => item.film_id === id && item.user_id === user?.id,
-    );
-    setIsLiked(!!foundItem);
-  }, [favoriteFilms, id, user?.id]);
-
+  const session = useSelector((state: RootState) => state.session.session);
   const data = {
-    film_id: id,
-    user_id: user?.id,
+    film: id,
+    user_id: session?.user?.id,
   };
 
   async function likeToggle() {
     if (isLiked) {
-      const favoriteFilm = await pb
-        .collection("favoriteMovies")
-        .getFirstListItem(`film_id="${id}" && user_id="${user?.id}"`);
-      await pb.collection("favoriteMovies").delete(favoriteFilm.id);
+      await supabase.from("favoriteFilms").delete().eq("film", data.film);
     } else {
-      await pb.collection("favoriteMovies").create(data);
+      await supabase.from("favoriteFilms").insert([data]).select();
     }
 
     setIsLiked(!isLiked);

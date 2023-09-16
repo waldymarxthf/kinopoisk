@@ -15,8 +15,6 @@ export function HeaderFilms() {
   const dispatch = useDispatch();
   const openedBurger = useSelector((state: RootState) => state.filter.openedBurger);
 
-  console.log("🚀 ~ file: ui.tsx:9 ~ Main ~ session:", session);
-
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);

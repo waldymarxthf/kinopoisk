@@ -12,17 +12,16 @@ import {
 import { useForm } from "@mantine/form";
 import { IconAt, IconUser, IconLock } from "@tabler/icons-react";
 import { useNavigate } from "react-router-dom";
-import usePocketBase from "~shared/lib/hooks/pb-hook";
+import { supabase } from "~shared/lib/supabase";
 
 export function Registration() {
-  const { register } = usePocketBase();
   const navigate = useNavigate();
   const form = useForm({
     initialValues: {
       // firstName: "",
       // lastName: "",
       email: "",
-      // name: "",
+      name: "",
       password: "",
       // confirm_password: "",
     },
@@ -30,7 +29,7 @@ export function Registration() {
       // firstName: (value) => (value.length < 2 ? "Name must have at least 2 letters" : null),
       // lastName: (value) => (value.length < 2 ? "Name must have at least 2 letters" : null),
       email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
-      // name: (value) => (value.length < 2 ? "Username must have at least 2 letters" : null),
+      name: (value) => (value.length < 2 ? "Username must have at least 2 letters" : null),
       password: (value) => (value.length < 8 ? "Password must have at least 8 characters" : null),
       // confirm_password: (value, values) =>
       //   value !== values.password ? "Passwords did not match" : null,
@@ -38,8 +37,16 @@ export function Registration() {
   });
 
   const handleOnSubmit = async () => {
-    await register(form.values.email, form.values.password);
-    navigate("/login");
+    await supabase.auth.signUp({
+      email: form.values.email,
+      password: form.values.password,
+      options: {
+        data: {
+          username: form.values.name,
+        },
+      },
+    });
+    navigate("/");
   };
 
   return (
@@ -78,7 +85,7 @@ export function Registration() {
             radius="md"
             mt="xs"
             icon={<IconUser size="0.9rem" />}
-            // {...form.getInputProps("name")}
+            {...form.getInputProps("name")}
           />
           <PasswordInput
             label="Password"

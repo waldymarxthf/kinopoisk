@@ -1,24 +1,15 @@
 import { Avatar, Group, Menu, Text, UnstyledButton, rem } from "@mantine/core";
 import { IconChevronDown, IconTrash } from "@tabler/icons-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useStyles } from "./ui.styles";
 import { supabase } from "~shared/lib/supabase";
-import { User } from "@supabase/gotrue-js";
+import { useSelector } from "react-redux";
+import { RootState } from "~app/store/store";
 
 export function AccountMenu() {
   const { classes, cx } = useStyles();
   const [userMenuOpened, setUserMenuOpened] = useState(false);
-  const [user, setUser] = useState<User>();
-
-  useEffect(() => {
-    (async () => {
-      await supabase.auth.getUser().then((value) => {
-        if (value.data.user) {
-          setUser(value.data.user);
-        }
-      });
-    })();
-  }, []);
+  const session = useSelector((state: RootState) => state.session.session);
 
   const logoutHandler = () => {
     supabase.auth.signOut();
@@ -36,9 +27,14 @@ export function AccountMenu() {
       <Menu.Target>
         <UnstyledButton className={cx(classes.user, { [classes.userActive]: userMenuOpened })}>
           <Group spacing={7}>
-            <Avatar color="blue" radius="xl" size={26} src={user?.user_metadata.avatar_url} />
+            <Avatar
+              color="blue"
+              radius="xl"
+              size={26}
+              src={session?.user?.user_metadata.avatar_url}
+            />
             <Text weight={500} size="md" mr={3}>
-              {user?.user_metadata.name}
+              {session?.user?.user_metadata.username}
             </Text>
             <IconChevronDown size={rem(12)} stroke={1.5} />
           </Group>

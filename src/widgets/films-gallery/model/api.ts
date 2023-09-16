@@ -1,6 +1,7 @@
-import PocketBase from "pocketbase";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { getFilms } from "~shared/api/films/films";
+import { User } from "@supabase/supabase-js";
+import { supabase } from "~shared/lib/supabase";
 
 export const fetchFilms = createAsyncThunk(
   "films/getFilms",
@@ -12,8 +13,12 @@ export const fetchFilms = createAsyncThunk(
 
 export const fetchFavoriteFilm = createAsyncThunk(
   "favoriteFilms/getFavoriteMovieList",
-  async (params: { pb: PocketBase }) => {
-    const response = await params.pb.collection("favoriteMovies").getList(1, 30);
-    return response;
+  async (params: { user: User }) => {
+    console.log(params.user);
+    const { data } = await supabase
+      .from("favoriteFilms")
+      .select("film, profiles!inner (id)")
+      .eq("profiles.id", params.user);
+    return { data };
   },
 );
