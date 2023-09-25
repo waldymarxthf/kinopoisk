@@ -1,27 +1,63 @@
-# React + TypeScript + Vite
+# MovieSearcher: An Alternative to KinoPoisk
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+MovieSearcher is a web application designed as an alternative to KinoPoisk. It allows users to search for movies, apply various filters, and even authorize themselves for a personalized experience. The project is built using React, Redux, React-Router-DOM, and follows a feature-sliced design pattern. The UI is powered by Mantine UI for a modern and responsive interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![App Screenshot](![image](https://github.com/waldymarxthf/kinopoisk/assets/56730796/5c5aa690-1230-4589-a2f4-bb0264ca3301))
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Search**: Efficiently search for movies by title, year, genre, etc.
+- **Filters**: Apply filters to narrow down your search results.
+- **Authorization**: Sign-in for a personalized user experience.
+- **Design**: Design powered by Mantine UI.
 
-- Configure the top-level `parserOptions` property like this:
+## Technologies Used
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+- React
+- Redux
+- React-Router-DOM
+- Feature Sliced Design
+- Mantine UI
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm
+
+### Installation
+
+1. Clone the repository
+
+\`\`\`
+git clone https://github.com/waldymarxthf/kinopoisk.git
+\`\`\`
+
+2. Navigate to the project directory
+
+\`\`\`
+cd kinopoisk
+\`\`\`
+
+3. Install dependencies
+
+\`\`\`
+npm install
+\`\`\`
+or
+\`\`\`
+yarn
+\`\`\`
+
+4. Start the development server
+
+\`\`\`
+npm run dev
+\`\`\`
+or
+\`\`\`
+yarn dev
+\`\`\`
